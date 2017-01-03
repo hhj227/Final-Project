@@ -9,3 +9,5 @@ anyway, download it. and later on tizen studio makes you to choose package manag
 gear fit2 is the latest version of gear fit series, just download 2.3.2 wearable. apparently the manual doesn't care.
 when you download 2.3.2 wearable, tizen sdk tool will be downloaded too.
 
+oh and make sure it's in the right branch, or you might get lost. i was trying to put this file to the master,
+but i don't know how to move it, how to delete it. so becareful.
