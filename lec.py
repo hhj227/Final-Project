@@ -5,6 +5,9 @@ import serial
 import time
 import subprocess
 
+dev =subprocess.check_output('ls /dev/ttyAMA0',shell=True)
+print dev
+
 try:
     ser = serial.Serial(dev.strip(),9600)
     print "Arduino Connected"
