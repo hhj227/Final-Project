@@ -1,0 +1,48 @@
+//가스감지센서: 
+int gas_A0 = A5;
+int gas_sensor = 0;
+int gas_count=0;
+int gas_continue=0; //gas detected, and the detecting condition is continued.
+int flag=0;
+
+char gas_char[4] = {0};
+
+void setup() {
+  pinMode(gas_A0, INPUT);
+  Serial.begin(9600);     // Open serial communications 
+  while (!Serial) {       // wait for serial port to connect. Needed for native USB port only
+    ;
+  }
+}
+
+void loop() {
+  int gas_sensor = analogRead(gas_A0);
+  //sprintf(gas_char,"%d",gas_sensor); // convert a value to char String 
+//  sprintf(dataString,"%d",gas_sensor); // convert a value to char String 
+  if(gas_sensor>150){
+    if(gas_continue==0){
+       gas_continue=1;
+    }
+    gas_count++;
+  }
+  else{
+    if(flag==2){
+    flag=1;
+    }
+    gas_continue=0;
+    gas_count=0;
+    
+  }
+
+  if (gas_count>=5) {
+    if(flag==0){
+    Serial.println(1);
+    flag=2;
+    }
+    else if(flag==1){
+      Serial.println(0);
+      flag=0;
+    gas_count=0;
+    gas_continue=0;
+    }
+    
