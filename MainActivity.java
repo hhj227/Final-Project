@@ -1,4 +1,4 @@
-package com.example.hanhyejung.test6;
+package com.example.hanhyejung.test9;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,7 +24,6 @@ import java.util.List;
 
 import org.json.*;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private ProgressDialog pDialog;
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewsByID();
+        //findViewsByID();
 
         editText = (EditText) findViewById(R.id.Name);
         editText2 = (EditText) findViewById(R.id.part_nr);
@@ -58,11 +57,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+/*
         public void findViewsByID(){
             String_name = (EditText) findViewById(R.id.Name);
             password = (EditText) findViewById(R.id.txtPass);
         }
+*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -100,14 +100,18 @@ public class MainActivity extends AppCompatActivity {
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
-
-
         }
 
         @Override
         protected String doInBackground(String... args) {
             String String_name = editText.getText().toString();
+            //String String_name = editText.
             String Int_Part = editText2.getText().toString();
+
+
+
+            //new Create_Part().execute(editText.getText().toString(), editText2.getText().toString());
+
 
             List<NameValuePair> params = new ArrayList<>();
             params.add(new BasicNameValuePair("Name", String_name));
