@@ -1,0 +1,7 @@
+androidmanifest.xml
+JSONParser.java
+MainActivity.java
+activity_main.xml
+menu.xml(res-menu폴더 안에 생성)
+strings.xml
+build.gradle
